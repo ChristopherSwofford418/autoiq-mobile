@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "AutoIQ",
+    "slug": "autoiq-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "bundleIdentifier": "io.autoiq.app",
+      "buildNumber": "1",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "io.autoiq.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0a0f1a"
+      },
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "com.android.vending.BILLING"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "AutoIQ uses your photos to diagnose car problems."
+        }
+      ]
+    ],
+    "splash": {
+      "backgroundColor": "#0a0f1a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
