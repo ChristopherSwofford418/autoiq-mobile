@@ -1,23 +1,24 @@
 {
   "expo": {
-    "name": "AutoIQ",
-    "slug": "autoiq-mobile",
-    "version": "1.0.1",
+    "name": "Auto Wizard",
+    "slug": "auto-wizard",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "ios": {
-      "bundleIdentifier": "io.autoiq.app",
-      "buildNumber": "2",
+      "bundleIdentifier": "com.getautowizard.app",
+      "buildNumber": "1",
       "supportsTablet": false,
       "infoPlist": {
-        "NSCameraUsageDescription": "AutoIQ uses your camera so you can take photos of vehicle issues for AI diagnosis.",
-        "NSPhotoLibraryUsageDescription": "AutoIQ uses selected photos from your library to help diagnose visible vehicle problems."
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "Auto Wizard uses your camera so you can take photos of vehicle issues for AI diagnosis.",
+        "NSPhotoLibraryUsageDescription": "Auto Wizard uses selected photos from your library to help diagnose visible vehicle problems."
       }
     },
     "android": {
-      "package": "io.autoiq.app",
-      "versionCode": 2,
+      "package": "com.getautowizard.app",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0a0f1a"
@@ -33,8 +34,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "AutoIQ uses selected photos from your library to help diagnose visible vehicle problems.",
-          "cameraPermission": "AutoIQ uses your camera so you can take photos of vehicle issues for AI diagnosis."
+          "photosPermission": "Auto Wizard uses selected photos from your library to help diagnose visible vehicle problems.",
+          "cameraPermission": "Auto Wizard uses your camera so you can take photos of vehicle issues for AI diagnosis."
         }
       ]
     ],

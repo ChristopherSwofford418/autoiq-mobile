@@ -14,6 +14,7 @@ import HistoryScreen from '../screens/HistoryScreen';
 import AddServiceScreen from '../screens/AddServiceScreen';
 import PaywallScreen from '../screens/PaywallScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import AIChatScreen from '../screens/AIChatScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -48,6 +49,11 @@ function MainTabs() {
         name="Diagnose"
         component={DiagnoseScreen}
         options={{ tabBarIcon: ({ focused }) => <TabIcon emoji="🔧" focused={focused} />, tabBarLabel: 'Diagnose' }}
+      />
+      <Tab.Screen
+        name="AIChat"
+        component={AIChatScreen}
+        options={{ tabBarIcon: ({ focused }) => <TabIcon emoji="🤖" focused={focused} />, tabBarLabel: 'AI Chat' }}
       />
       <Tab.Screen
         name="History"
