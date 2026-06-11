@@ -8,12 +8,14 @@
       "distribution": "internal",
       "ios": {
         "buildConfiguration": "Release",
-        "simulator": false
+        "simulator": false,
+        "autoIncrement": true
       }
     },
     "production": {
       "ios": {
-        "buildConfiguration": "Release"
+        "buildConfiguration": "Release",
+        "autoIncrement": true
       },
       "android": {
         "buildType": "app-bundle"
