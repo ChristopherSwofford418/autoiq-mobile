@@ -178,7 +178,7 @@ export default function SettingsScreen({ navigation }) {
           <SettingRow icon="🗑️" label="Delete Account" onPress={handleDeleteAccount} danger disabled={deleting} />
         </View>
 
-        <Text style={styles.version}>AutoIQ v1.0.0</Text>
+        <Text style={styles.version}>AutoIQ v1.0.1</Text>
       </ScrollView>
     </SafeAreaView>
   );

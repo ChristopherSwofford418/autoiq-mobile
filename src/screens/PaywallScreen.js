@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View, Text, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator, Alert,
+  View, Text, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator, Alert, Linking,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -9,6 +9,9 @@ import {
   setPurchaseListener, checkExistingSubscription, PRODUCT_IDS,
 } from '../lib/iap';
 import { supabase } from '../lib/supabase';
+
+const PRIVACY_URL = 'https://autoiq.io/privacy';
+const TERMS_URL = 'https://autoiq.io/terms';
 
 const PREMIUM_FEATURES = [
   { icon: '🤖', title: 'Unlimited AI Diagnosis', desc: 'Photo + symptom diagnosis with no limits' },
@@ -125,7 +128,7 @@ export default function PaywallScreen({ navigation }) {
           <Text style={styles.priceLine}>
             {loading ? <ActivityIndicator color="#fff" /> : `${price} / month`}
           </Text>
-          <Text style={styles.priceNote}>Cancel anytime. No commitment.</Text>
+          <Text style={styles.priceNote}>Auto-renewable monthly subscription. Cancel anytime.</Text>
         </View>
 
         {/* CTA */}
@@ -145,9 +148,18 @@ export default function PaywallScreen({ navigation }) {
         </TouchableOpacity>
 
         <Text style={styles.legalText}>
-          Payment will be charged to your App Store / Google Play account at confirmation of purchase.
-          Subscription automatically renews unless cancelled at least 24 hours before the end of the current period.
+          AutoIQ Premium is an auto-renewable monthly subscription. Payment will be charged to your App Store / Google Play account at confirmation of purchase. The subscription automatically renews unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription in your account settings after purchase.
         </Text>
+
+        <View style={styles.legalLinks}>
+          <TouchableOpacity onPress={() => Linking.openURL(TERMS_URL)}>
+            <Text style={styles.legalLink}>Terms of Service</Text>
+          </TouchableOpacity>
+          <Text style={styles.legalDivider}>•</Text>
+          <TouchableOpacity onPress={() => Linking.openURL(PRIVACY_URL)}>
+            <Text style={styles.legalLink}>Privacy Policy</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -193,5 +205,8 @@ const styles = StyleSheet.create({
   ctaBtnSub: { color: 'rgba(255,255,255,0.7)', fontSize: 12, marginTop: 2 },
   restoreBtn: { alignItems: 'center', padding: 14 },
   restoreText: { color: '#64748b', fontSize: 14 },
-  legalText: { color: '#374151', fontSize: 11, textAlign: 'center', lineHeight: 16, marginTop: 12 },
+  legalText: { color: '#64748b', fontSize: 11, textAlign: 'center', lineHeight: 16, marginTop: 12 },
+  legalLinks: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8, marginTop: 12 },
+  legalLink: { color: '#3b82f6', fontSize: 12, fontWeight: '700' },
+  legalDivider: { color: '#475569', fontSize: 12 },
 });
