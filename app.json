@@ -27,7 +27,8 @@
         "android.permission.INTERNET",
         "android.permission.CAMERA",
         "android.permission.READ_MEDIA_IMAGES",
-        "com.android.vending.BILLING"
+        "com.android.vending.BILLING",
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "plugins": [
@@ -47,7 +48,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "c51bef75-3daa-43e7-967d-36dfa2f62fad"
+        "projectId": "380d535d-052a-4cc7-81bf-0588c8759ac6"
       }
     },
     "owner": "cswofford"
