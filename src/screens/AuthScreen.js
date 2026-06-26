@@ -31,7 +31,7 @@ export default function AuthScreen({ navigation }) {
         if (err) throw err;
         // Create profile row
         if (data.user) {
-          await supabase.from('autoiq_profiles').upsert({ id: data.user.id, subscribed: false });
+          await supabase.from('profiles').upsert({ id: data.user.id, subscribed: false });
         }
         navigation.replace('Main');
       }

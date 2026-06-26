@@ -72,7 +72,7 @@ export default function PaywallScreen({ navigation }) {
       if (has) {
         const { data: { user } } = await supabase.auth.getUser();
         if (user) {
-          await supabase.from('autoiq_profiles').upsert({ id: user.id, subscribed: true });
+          await supabase.from('profiles').upsert({ id: user.id, subscribed: true });
         }
         Alert.alert('Restored!', 'Your subscription has been restored.', [
           { text: 'Great!', onPress: () => navigation.goBack() }

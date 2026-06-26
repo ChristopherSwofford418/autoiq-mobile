@@ -42,7 +42,7 @@ export default function OnboardingScreen({ navigation }) {
       });
       if (err) throw err;
       // Ensure profile row
-      await supabase.from('autoiq_profiles').upsert({ id: user.id, subscribed: false });
+      await supabase.from('profiles').upsert({ id: user.id, subscribed: false });
       setStep(2);
     } catch (e) {
       setError(e.message || 'Could not save vehicle.');

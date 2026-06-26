@@ -27,7 +27,7 @@ export default function SettingsScreen({ navigation }) {
     const { data: { user: u } } = await supabase.auth.getUser();
     setUser(u);
     if (u) {
-      const { data: p } = await supabase.from('autoiq_profiles').select('*').eq('id', u.id).single();
+      const { data: p } = await supabase.from('profiles').select('*').eq('id', u.id).single();
       setProfile(p);
     }
     setLoading(false);
@@ -40,7 +40,7 @@ export default function SettingsScreen({ navigation }) {
       const has = await checkExistingSubscription();
       await disconnectIAP();
       if (has && user) {
-        await supabase.from('autoiq_profiles').upsert({ id: user.id, subscribed: true });
+        await supabase.from('profiles').upsert({ id: user.id, subscribed: true });
         setProfile(p => ({ ...p, subscribed: true }));
         Alert.alert('Restored!', 'Your subscription is active.');
       } else {
@@ -85,7 +85,7 @@ export default function SettingsScreen({ navigation }) {
                       if (user) {
                         await supabase.from('autoiq_vehicles').delete().eq('user_id', user.id);
                         await supabase.from('autoiq_diagnoses').delete().eq('user_id', user.id);
-                        await supabase.from('autoiq_profiles').delete().eq('id', user.id);
+                        await supabase.from('profiles').delete().eq('id', user.id);
                       }
                       await supabase.auth.signOut();
                       navigation.replace('Onboarding');

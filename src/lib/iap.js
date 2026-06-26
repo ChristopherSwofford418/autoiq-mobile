@@ -80,7 +80,7 @@ export function setPurchaseListener(onSuccess, onError) {
         await finishTransaction({ purchase, isConsumable: false });
         const { data: { user } } = await supabase.auth.getUser();
         if (user) {
-          await supabase.from('autoiq_profiles')
+          await supabase.from('profiles')
             .upsert({ id: user.id, subscribed: true })
             .eq('id', user.id);
         }
