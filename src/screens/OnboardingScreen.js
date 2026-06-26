@@ -57,7 +57,7 @@ export default function OnboardingScreen({ navigation }) {
         <StatusBar style="light" />
         <View style={styles.center}>
           <Text style={styles.bigEmoji}>🚗</Text>
-          <Text style={styles.heroTitle}>Welcome to AutoIQ</Text>
+          <Text style={styles.heroTitle}>Welcome to Auto Wizard</Text>
           <Text style={styles.heroSub}>
             Track maintenance, diagnose issues with AI,{'\n'}and never miss a service again.
           </Text>

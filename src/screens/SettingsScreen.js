@@ -152,7 +152,7 @@ export default function SettingsScreen({ navigation }) {
           ) : (
             <View style={styles.row}>
               <Text style={styles.rowIcon}>✅</Text>
-              <Text style={styles.rowLabel}>AutoIQ Premium Active</Text>
+              <Text style={styles.rowLabel}>Auto Wizard Pro Active</Text>
             </View>
           )}
           <SettingRow
@@ -167,8 +167,8 @@ export default function SettingsScreen({ navigation }) {
         {/* App */}
         <Text style={styles.sectionHeader}>APP</Text>
         <View style={styles.section}>
-          <SettingRow icon="🔒" label="Privacy Policy" onPress={() => Linking.openURL('https://autoiq.io/privacy')} />
-          <SettingRow icon="📄" label="Terms of Service" onPress={() => Linking.openURL('https://autoiq.io/terms')} />
+          <SettingRow icon="🔒" label="Privacy Policy" onPress={() => Linking.openURL('https://getautowizard.com/privacy')} />
+          <SettingRow icon="📄" label="Terms of Service" onPress={() => Linking.openURL('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/')} />
         </View>
 
         {/* Account */}
@@ -178,7 +178,7 @@ export default function SettingsScreen({ navigation }) {
           <SettingRow icon="🗑️" label="Delete Account" onPress={handleDeleteAccount} danger disabled={deleting} />
         </View>
 
-        <Text style={styles.version}>AutoIQ v1.0.1</Text>
+        <Text style={styles.version}>Auto Wizard v1.1.0</Text>
       </ScrollView>
     </SafeAreaView>
   );

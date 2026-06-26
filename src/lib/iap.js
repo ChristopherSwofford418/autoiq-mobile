@@ -1,5 +1,5 @@
 /**
- * AutoIQ In-App Purchase
+ * Auto Wizard In-App Purchase
  * Uses react-native-iap v15
  */
 import {
@@ -17,7 +17,7 @@ import { Platform } from 'react-native';
 import { supabase } from './supabase';
 
 export const PRODUCT_IDS = {
-  MONTHLY: 'io.autoiq.app.monthly', // $3.99/month
+  MONTHLY: 'autowizard_pro_monthly_v3', // $9.99/month
 };
 
 let purchaseUpdateSub = null;

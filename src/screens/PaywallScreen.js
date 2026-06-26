@@ -10,8 +10,8 @@ import {
 } from '../lib/iap';
 import { supabase } from '../lib/supabase';
 
-const PRIVACY_URL = 'https://autoiq.io/privacy';
-const TERMS_URL = 'https://autoiq.io/terms';
+const PRIVACY_URL = 'https://getautowizard.com/privacy';
+const TERMS_URL = 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/';
 
 const PREMIUM_FEATURES = [
   { icon: '🤖', title: 'Unlimited AI Diagnosis', desc: 'Photo + symptom diagnosis with no limits' },
@@ -37,7 +37,7 @@ export default function PaywallScreen({ navigation }) {
     setPurchaseListener(
       (purchase) => {
         setPurchasing(false);
-        Alert.alert('Welcome to AutoIQ Premium! 🚗', 'Your subscription is active.', [
+        Alert.alert('Welcome to Auto Wizard Pro! 🚗', 'Your subscription is active.', [
           { text: 'Let\'s Go!', onPress: () => navigation.goBack() }
         ]);
       },
@@ -87,7 +87,7 @@ export default function PaywallScreen({ navigation }) {
     }
   }
 
-  const price = product?.localizedPrice || '$3.99';
+  const price = product?.localizedPrice || '$9.99';
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -100,7 +100,7 @@ export default function PaywallScreen({ navigation }) {
         {/* Hero */}
         <View style={styles.hero}>
           <Text style={styles.heroEmoji}>🚗</Text>
-          <Text style={styles.heroTitle}>AutoIQ Premium</Text>
+          <Text style={styles.heroTitle}>Auto Wizard Pro</Text>
           <Text style={styles.heroSub}>Keep your car in peak condition with AI-powered maintenance intelligence.</Text>
         </View>
 
@@ -148,7 +148,7 @@ export default function PaywallScreen({ navigation }) {
         </TouchableOpacity>
 
         <Text style={styles.legalText}>
-          AutoIQ Premium is an auto-renewable monthly subscription. Payment will be charged to your App Store / Google Play account at confirmation of purchase. The subscription automatically renews unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription in your account settings after purchase.
+          Auto Wizard Pro is an auto-renewable monthly subscription. Payment will be charged to your App Store / Google Play account at confirmation of purchase. The subscription automatically renews unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription in your account settings after purchase.
         </Text>
 
         <View style={styles.legalLinks}>

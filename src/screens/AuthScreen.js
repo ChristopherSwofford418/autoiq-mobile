@@ -50,7 +50,7 @@ export default function AuthScreen({ navigation }) {
           {/* Header */}
           <View style={styles.header}>
             <Text style={styles.logo}>🚗</Text>
-            <Text style={styles.title}>AutoIQ</Text>
+            <Text style={styles.title}>Auto Wizard</Text>
             <Text style={styles.subtitle}>AI-Powered Auto Care</Text>
           </View>
 
@@ -105,11 +105,11 @@ export default function AuthScreen({ navigation }) {
           {/* Legal */}
           <View style={styles.legal}>
             <Text style={styles.legalText}>By continuing you agree to our </Text>
-            <TouchableOpacity onPress={() => Linking.openURL('https://autoiq.io/terms')}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/')}>
               <Text style={styles.link}>Terms</Text>
             </TouchableOpacity>
             <Text style={styles.legalText}> and </Text>
-            <TouchableOpacity onPress={() => Linking.openURL('https://autoiq.io/privacy')}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://getautowizard.com/privacy')}>
               <Text style={styles.link}>Privacy Policy</Text>
             </TouchableOpacity>
           </View>
